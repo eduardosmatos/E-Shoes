@@ -1,0 +1,48 @@
+/* CSS */
+body {
+    background-color: skyblue;
+}
+.card {
+    padding: 50px;
+    margin: 20px 0px;
+}
+
+div.div-oferta {
+    width:    350px;
+    height:   250px;
+    margin:   20px;
+    float:    left;
+    position: relative;
+}
+div.div-oferta img {
+    width:            100%;
+    height:           100%;
+    border-radius:    10px;
+}
+.legenda {
+    font-weight:      bold;
+    padding:          6px;
+    position:         absolute;
+    left:             10px;
+    right:            10px;
+}
+.trocaFundo {
+    border-radius: 50px;
+}
+.text-center {
+    background-color: white;
+    padding: 8px;
+    width: 410px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 30px;
+}
+.text-center1 {
+    background-color: skyblue;
+    padding: 8px;
+    width: 650px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 30px;
+    text-align: center;
+}
