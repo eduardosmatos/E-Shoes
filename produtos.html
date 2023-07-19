@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Edu Shoes | Produtos</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/">
+    <link rel="shortcut icon" href="images/e.png" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" h1>Edu Shoes</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"><span class="fas fa-home"></span> Início</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="produtos.html"><span class="fas fa-tags"></span> Produtos</a>
+                  </li>
+
+                   <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html" ><span class="fas fa-user"></span> Cadastre-se</a>
+                  </li>
+                    
+                   <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html"><span class="fas fa-shopping-cart"></span> Meu carrinho</a>
+                  </li>
+                
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Digite sua pesquisa..." aria-label="Search">
+                  <button class="btn btn-outline my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+
+              </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section>
+        <div class="container">
+            <h3><span class="fas fa-tags"></span> Produtos</h3>
+                <div class="dropdown-divider"></div>
+                <div class="row">
+                <div class="col-md-3">
+                  <img src="images/adi-ease1.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">Adidas Adi Ease</h5>
+                    <p class="card-text">R$ 249,90</p>
+                    <p>
+                        Quantidade: <input type="number" value="1" min="1" max="10" id="qtd1"><br><br>
+                    <button type="button" class="btn btn-primary" id="adicionar1" id="produto1" onclick="AddCarrinho('Adidas Adi Ease', document.getElementById('qtd1').value,'249', 1)">COMPRAR</button>
+                    </p>
+                  </div>
+                    <div id="modelo">
+                            <p class="titulo">
+                                <button class="btEsconde btn"><i class="fas fa-angle-down"></i>
+                                </button> Ver Mais
+                            </p>
+                            <p class="detalhe">Referência na cultura skate, o adiease combina um design clássico e clean com alta performance. Produzido em camurça resistente e solado de borracha vulcanizada, este tênis é flexível de ponta a ponta, desde o primeiro uso.</p>
+                        </div>
+                </div>
+                    
+                 <div class="col-md-3">
+                  <img src="images/puma-suede.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">Puma Suede Classic</h5>
+                    <p class="card-text">R$ 299,90</p>
+                    <p>
+                        Quantidade: <input type="number" value="1" min="1" max="10" id="qtd2"><br><br>
+                    <button type="button" class="btn btn-primary" id="adicionar2" id="produto2" onclick="AddCarrinho('Puma Suede Classic', document.getElementById('qtd2').value,'249', 2)">COMPRAR</button>
+                    </p>
+                  </div>
+                     <div id="modelo">
+                            <p class="titulo">
+                                <button class="btEsconde btn"><i class="fas fa-angle-down"></i></button> Ver Mais
+                            </p>
+                            <p class="detalhe">O Tênis Puma Suede Classic Eco Masculino é versátil e pode ser combinado com as mais variadas peças de roupa. Seu visual clássico dá aos homens uma excelente opção de calçado para o dia a dia.</p>
+                        </div>
+                </div>
+                
+                 <div class=" col-md-3">
+                     <img src="images/nike%20sb%20check%20solar%201.png" class="card-img-top">
+                  
+                    <h5 class="card-title">Nike SB Check Solar</h5>
+                    <p class="card-text">R$ 199,90</p>
+                    <p>
+                        Quantidade: <input type="number" value="1" min="1" max="10" id="qtd3"><br><br>
+                    <button type="button" class="btn btn-primary" id="adicionar3" id="produto3" onclick="AddCarrinho('Nike SB Check Solar', document.getElementById('qtd3').value,'199', 3)">COMPRAR</button>
+                    </p>
+                     <div id="modelo">
+                            <p class="titulo">
+                                <button class="btEsconde btn"><i class="fas fa-angle-down"></i></button> Ver Mais
+                            </p>
+                            <p class="detalhe">Aposte no Tênis Nike Sb Check Solar para mandar bem, dentro e fora das pistas. Modelo confortável, com pontos estratégicos desenvolvidos para as sessões de skate.</p>
+                        </div>
+                  </div>
+                
+                <div class=" col-md-3">
+                     <img src="images/vans-authentic.jpg" class="card-img-top">
+                  
+                    <h5 class="card-title">Vans Authentic</h5>
+                    <p class="card-text">R$ 249,90</p>
+                    <p>
+                        Quantidade: <input type="number" value="1" min="1" max="10" id="qtd4"><br><br>
+                    <button type="button" class="btn btn-primary" id="adicionar4" id="produto4" onclick="AddCarrinho('Vans Authentic', document.getElementById('qtd4').value,'249', 4)">COMPRAR</button>
+                    </p>
+                    <div id="modelo">
+                            <p class="titulo">
+                                <button class="btEsconde btn"><i class="fas fa-angle-down"></i></button> Ver Mais
+                            </p>
+                            <p class="detalhe">O tênis Authentic da Vans une o original e agora icônico estilo cano baixo da Vans ao cabedal de lona resistente. Possui ilhós de metal e a original sola Waffle de borracha vulcanizada da marca.</p>
+                        </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootbox.min.js"></script>
+    <script type="text/javascript" src="js/codigo.js"></script>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='bootstrap/js/bootstrap.min.js'></script>
+    <script type='text/javascript'>
+        function AddCarrinho(produto, qtd, valor, posicao)
+        {
+            localStorage.setItem("produto" + posicao, produto);
+            localStorage.setItem("qtd" + posicao, qtd);
+            valor = valor * qtd;
+            localStorage.setItem("valor" + posicao, valor);
+            alert("Produto adicionado ao carrinho!");
+
+        }
+        $(".btEsconde").click(function() {
+            $(this).parent().next().slideToggle();
+        });
+
+        $("#botao03").click(function() {
+            bloco = $("#modelo").html();
+            nItens = $(".detalhe").length + 1;
+            bloco = bloco.replace('3o', nItens + 'o');
+            $("#box").append(bloco);
+        });
+
+        $(".btPinta").click(function() {
+            cor = $(this).data('cor');
+            $("#quadro").css({
+                "background-color": cor
+            });
+        });
+
+    </script>
+</body>
+</html>

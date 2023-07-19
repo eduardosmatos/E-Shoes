@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Edu Shoes | Meu Carrinho</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/">
+    <link rel="shortcut icon" href="images/e.png" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" h1>Edu Shoes</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"><span class="fas fa-home"></span> Início</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="produtos.html"><span class="fas fa-tags"></span> Produtos</a>
+                  </li>
+
+                   <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html" ><span class="fas fa-user"></span> Cadastre-se</a>
+                  </li>
+                    
+                   <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html"><span class="fas fa-shopping-cart"></span> Meu carrinho</a>
+                  </li>
+                
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Digite sua pesquisa..." aria-label="Search">
+                  <button class="btn btn-outline my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+
+              </div>
+            </div>
+        </nav>
+    </header>
+<body>
+        <section>
+            <div class="container">
+                <div class="card">
+                    <h3><i class="fa fa-shoping-cart"></i> Meu Carrinho<span class="badge badge-success pull-right" id="numReg">0</span></h3>
+                    
+                    <table class="table table-striped table-hovered" id="itens">
+                        <thead>
+                            <tr>
+                                <th style="width:600px">Produto</th>
+                                <th style="width:100px">Valor</th>
+                                <th style="width:100px">Quantidade</th>
+     
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Par de Meias Adidas</td>
+                                <td>Grátis</td>
+                                <td>1</td>
+                                <td><button class='btn btn-info btDel'><i class='fa fa-times'></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div><b>Total:</b> R$<input type="text" name="total" id="total" readonly style="border:none;"></div>
+                    
+                    <div class='row justify-content-md-center' style='margin-top:20px'>        
+                        <div class='col-md-6' id="box">
+                            <h5 class='alert alert-danger'><i class='fa fa-calculator'></i> Calcular Parcelas</h5>
+                            <form name="form1" class='form1' onsubmit="return false">            
+                                <div class='form-group'>
+                                    <div class='input-group'>
+                                        <div class='input-group-prepend'>
+                                            <span class="input-group-text">Valor da compra:</span>
+                                        </div>
+                                        <input type='number' class='form-control' name='valX' />                        
+                                    </div>
+                                </div>
+
+                                <div class='form-group'>
+                                    <div class='input-group'>
+                                        <div class='input-group-prepend'>
+                                            <span class="input-group-text">Quantidade de parcelas:</span>
+                                        </div>
+                                        <input type='number' class='form-control' name='valY' />
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='form-group'>
+                                    <div class='input-group'>
+                                        <div class='input-group-prepend'>
+                                            <span class='input-group-text'>Valor da parcela</span>
+                                        </div>
+                                        <input type='text' class='form-control resposta' readonly />
+                                        <div class='input-group-append'>
+                                            <button class='btn btn-warning' onclick="dividir()">Calcular Parcelas</button>
+                                            <input type='reset' class='btn btn-info' value="Limpar" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>       
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <script>
+        var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+        var i = 0; // variável que irá percorrer as posições
+        var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+
+        //Inclui uma linha no elemento tabela <tr></tr>
+        //informei -1 para criar a linha no final da tabela
+
+        for (i = 1; i <= 99; i++) // verifica até 99 produtos registrados na localStorage
+        {
+
+        //Adiciona dua coluna na linha criada <td></td> <td></td>
+
+
+        var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
+        if (prod != null) {
+            tabela = document.getElementById("itens");
+            var linha = tabela.insertRow(-1);
+            var coluna1 = linha.insertCell(0);
+            var coluna2 = linha.insertCell(1);
+            var coluna3 = linha.insertCell(2);
+            var coluna4 = linha.insertCell(3);
+
+        // exibe os dados da lista dentro da div itens
+        coluna1.innerHTML += localStorage.getItem("produto" + i);
+        coluna2.innerHTML += localStorage.getItem("valor" + i);
+        coluna3.innerHTML += localStorage.getItem("qtd" + i);
+
+        // calcula o total dos recheios
+        valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+        total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+            }
+        }
+        document.getElementById("total").value = total.toFixed(2);
+
+        function contaReg() {
+            var total = 0;
+            total = $("#itens tbody tr").length;
+            $("#numReg").html(total);
+        }
+        contaReg();
+            
+            function dividir() {
+            var x = parseFloat(document.getElementsByName('valX')[0].value);
+            var y = parseFloat(document.getElementsByName('valY')[0].value);
+            if(isNaN(x) || isNaN(y)) {
+                alert("você deverá informar números para calcular...");
+            } else {
+                if(y==0)
+                    document.getElementsByClassName('resposta')[0].value = "erro";
+                else {
+                    z = x / y;
+                    document.getElementsByClassName('resposta')[0].value = z;
+                }
+            }
+        }
+
+        </script>    
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/bootbox.min.js"></script>
+        <script type="text/javascript" src="js/codigo.js"></script>
+        
+    </body>
+</html>
